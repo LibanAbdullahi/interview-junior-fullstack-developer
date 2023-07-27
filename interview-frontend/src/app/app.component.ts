@@ -7,6 +7,7 @@ import { CityService } from './city.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  title: string = 'interview-frontend';
   searchQuery: string = '';
   cities: any[] = [];
 
@@ -15,7 +16,7 @@ export class AppComponent {
   searchCities() {
     this.cityService.searchCities(this.searchQuery).subscribe((data) => {
       console.log('Data received from backend:', data);
-      this.cities = data.length > 0 ? data : []; // Assign data to cities or an empty array if no data received
+      this.cities = data.length > 0 ? data : [];
     });
   }
 }
